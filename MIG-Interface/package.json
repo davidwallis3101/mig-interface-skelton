@@ -1,0 +1,18 @@
+{
+  "author": "GenieLabs",
+  "version": "v!VERSION!",
+  "title": "Interface Skelton",
+  "description": "Example Interface Code",
+  "published": "!DO_NOT_EDIT_RELEASEDATE!",
+  "sourcecode": "",
+  "homepage": "https://github.com/genielabs/mig-interface-skelton",
+  "widgets": [],
+  "programs": [],
+  "interfaces": [
+    {
+      "file": "MIG-Interface.zip",
+      "name": "MIG-Interface",
+      "description": "MIG Interface"
+    }
+  ]
+}

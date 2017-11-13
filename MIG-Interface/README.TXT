@@ -1,6 +1,6 @@
 ﻿Basic skelton project for writing a new MIG / HomeGenie interface driver
 ---
-Version: 1.1 (2016-01-22)
+Version: !DO_NOT_EDIT_VERSION!
 License: GPL-3
-Author: genielabs
+Author: genielabs !DO_NOT_EDIT_RELEASEDATE!
 Source: https://github.com/genielabs/mig-interface-skelton
