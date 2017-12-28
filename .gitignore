@@ -15,3 +15,4 @@ Thumbs.db
 packages/*
 !packages/repositories.config
 
+MIG-Interface/Output/MIG-Interface.zip
