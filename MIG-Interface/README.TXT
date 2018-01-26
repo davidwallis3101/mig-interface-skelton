@@ -1,4 +1,4 @@
-﻿Basic skelton project for writing a new MIG / HomeGenie interface driver
+﻿Basic skelton project for writing a new MIG / HomeGenie-BE interface driver
 ---
 Version: !DO_NOT_EDIT_VERSION!
 License: GPL-3

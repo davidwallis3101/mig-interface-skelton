@@ -16,3 +16,4 @@ packages/*
 !packages/repositories.config
 
 MIG-Interface/Output/MIG-Interface.zip
+/.vs/MIG-Interface/v15/Server/sqlite3

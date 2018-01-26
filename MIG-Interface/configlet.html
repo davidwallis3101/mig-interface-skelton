@@ -1,9 +1,17 @@
-<!-- HomeGenie interface settings configlet -->
+<!-- HomeGenie-BE interface settings configlet -->
 <div data-configlet-id="Example.InterfaceSkelton">
-
     <div class="ui-grid-a">
         <div class="ui-block-a">
-            HomeGenie/MIG interface configlet example 
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <label>MyOption1</label>
+                    <input data-ui-field="gatewayaddress" type="text" data-locale-option1="configure_interfaces_optmyoption1" value="AValue" />
+                </div>
+                <div class="ui-block-b">
+                    <label>MySecretOption1</label>
+                    <input data-ui-field="mysecureoption1" type="password" data-locale-secretOption1="configure_interfaces_optmysecureoption1" />
+                </div>
+            </div>
         </div>
         <div class="ui-block-b">
             <span style="float:right">
@@ -14,7 +22,6 @@
             </span>
         </div>
     </div>
-    
 </div>
 
 <script type="text/javascript" language="javascript">
@@ -41,7 +48,7 @@ HG.WebApp.SystemSettings.Interfaces['Example.InterfaceSkelton'] = {
         // English is the default locale
         var defaultLocale = {
             "title": 
-                "Example Interface"
+                "Example Interface v!DO_NOT_EDIT_VERSION!"
         };
         HG.WebApp.Locales.LocalizeElement(this.Configlet, defaultLocale);
         this.Locale = defaultLocale;

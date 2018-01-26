@@ -1,7 +1,7 @@
-﻿// <copyright file="AssemblyInfo.cs" company="GenieLabs">
-// This file is part of HomeGenie Project source code.
+﻿// <copyright file="AssemblyInfo.cs" company="Bounz">
+// This file is part of HomeGenie-BE Project source code.
 //
-// HomeGenie is free software: you can redistribute it and/or modify
+// HomeGenie-BE is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
@@ -11,10 +11,11 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License
-// along with HomeGenie.  If not, see http://www.gnu.org/licenses.
+// along with HomeGenie-BE.  If not, see http://www.gnu.org/licenses.
 //
-// Author: Generoso Martello gene@homegenie.it
-// Project Homepage: http://homegenie.it
+//  Project Homepage: https://github.com/Bounz/HomeGenie-BE
+//
+//  Forked from Homegenie by Generoso Martello gene@homegenie.it
 // </copyright>
 
 using System.Reflection;
@@ -24,9 +25,9 @@ using System.Reflection;
 [assembly: AssemblyTitle("MIG.Skelton")]
 [assembly: AssemblyDescription("MIG Interface Example")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GemieLabs")]
+[assembly: AssemblyCompany("Bounz")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("GemieLabs")]
+[assembly: AssemblyCopyright("Bounz")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

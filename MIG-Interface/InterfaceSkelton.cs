@@ -1,7 +1,7 @@
-﻿// <copyright file="InterfaceSkelton.cs" company="GenieLabs">
-// This file is part of HomeGenie Project source code.
+﻿// <copyright file="InterfaceSkelton.cs" company="Bounz">
+// This file is part of HomeGenie-BE Project source code.
 //
-// HomeGenie is free software: you can redistribute it and/or modify
+// HomeGenie-BE is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
@@ -11,21 +11,26 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License
-// along with HomeGenie.  If not, see http://www.gnu.org/licenses.
+// along with HomeGenie-BE.  If not, see http://www.gnu.org/licenses.
 //
-// Author: Generoso Martello gene@homegenie.it
-// Project Homepage: http://homegenie.it
+//  Project Homepage: https://github.com/Bounz/HomeGenie-BE
+//
+//  Forked from Homegenie by Generoso Martello gene@homegenie.it
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using MIG.Config;
-using NLog;
-
-// Your namespace must begin MIG.Interfaces for MIG to be able to load it
+/* Namespaces must begin MIG.Interfaces for MIG to be able to load it
+* Example would be come the interface domain, and the class name the interface name
+* So in this code Example.InterfaceSkelton is the interface name in MIG.
+*/
 namespace MIG.Interfaces.Example
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using MIG.Config;
+    using MIG.Interface;
+    using NLog;
+
     /// <summary>
     /// InterfaceSkelton class
     /// </summary>
@@ -34,7 +39,7 @@ namespace MIG.Interfaces.Example
         /// <summary>
         /// Logger
         /// </summary>
-        private static Logger log = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// List containing interface Modules
@@ -46,6 +51,9 @@ namespace MIG.Interfaces.Example
         /// </summary>
         public InterfaceSkelton()
         {
+            // Creating modules would normally be done in either the connect method or within the GetModules() Method
+            // See https://github.com/Bounz/HomeGenie-BE/blob/master/MIG/MIG.HomeAutomation/ZWave.cs for an example
+            // THe default constuctor can then be removed.
             this.modules = new List<InterfaceModule>();
 
             // manually add some fake modules
@@ -85,37 +93,6 @@ namespace MIG.Interfaces.Example
         /// Event for Interface Properties Changing
         /// </summary>
         public event InterfacePropertyChangedEventHandler InterfacePropertyChanged;
-
-        /// <summary>
-        /// Enum containing the commands that are permitted via the web interface
-        /// </summary>
-        public enum Commands
-        {
-            /// <summary>
-            /// No Set Command Example
-            /// </summary>
-            NotSet,
-
-            /// <summary>
-            /// Control.On Example
-            /// </summary>
-            Control_On,
-
-            /// <summary>
-            /// Control.Off Example
-            /// </summary>
-            Control_Off,
-
-            /// <summary>
-            /// Temperature.Get Example
-            /// </summary>
-            Temperature_Get,
-
-            /// <summary>
-            /// Greet.Hello
-            /// </summary>
-            Greet_Hello
-        }
 
         /// <summary>
         /// Gets or sets a value indicating whether this interface is enabled
@@ -182,9 +159,31 @@ namespace MIG.Interfaces.Example
             if (!this.IsConnected)
             {
                 // Log that the interface is loading and display the version being loaded
-                log.Info("Starting InterfaceSkelton, Version {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                Log.Info("Starting {0}, Version {1}", this.GetDomain(), Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
-                // TODO: Perform a connection to your 'hardware' here
+
+                // TODO: If this option isnt in the configuration file then a terminating error will be thrown.
+                // TODO: Create static helper function to handle errors and logging.
+                // Options can be retrieved by:
+                if (string.IsNullOrEmpty(this.GetOption("MyOption1").Value))
+                {
+                    Log.Error("MyOption1 not configured");
+                }
+
+                if (string.IsNullOrEmpty(this.GetOption("MySecureOption1").Value))
+                {
+                    Log.Error("MySecureOption1 not configured");
+                }
+
+                var deviceAddress = this.GetOption("MyOption1").Value;
+                Log.Info($"Connecting to {deviceAddress}");
+
+                // Perform Connection
+
+                // Sample Code Here....
+
+                // End Performing Connection
+                Log.Info($"{this.GetDomain()} Connected");
                 this.IsConnected = true;
             }
 
@@ -239,7 +238,7 @@ namespace MIG.Interfaces.Example
                     case Commands.NotSet:
                         break;
                     default:
-                        log.Error(new ArgumentOutOfRangeException(), "Command [{0}] not recognised", command);
+                        Log.Error(new ArgumentOutOfRangeException(), "Command [{0}] not recognised", command);
                         break;
                 }
             }

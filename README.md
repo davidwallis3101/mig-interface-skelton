@@ -1,5 +1,5 @@
 ﻿# MIG-Interface Skelton Project
 ﻿
-Basic skelton project for writing a new MIG / HomeGenie interface driver.
+Basic skelton project for writing a new MIG / HomeGenie-BE interface driver.
 
 

@@ -1,20 +1,20 @@
 ﻿// <copyright file="Program.cs" company="GenieLabs">
-// This file is part of HomeGenie Project source code.
+// This file is part of HomeGenie-BE Project source code.
 //
-// HomeGenie is free software: you can redistribute it and/or modify
+// HomeGenie-BE is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// HomeGenie is distributed in the hope that it will be useful,
+// HomeGenie-BE is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 // You should have received a copy of the GNU General Public License
-// along with HomeGenie.  If not, see http://www.gnu.org/licenses.
+// along with HomeGenie-BE.  If not, see http://www.gnu.org/licenses.
 //
-// Author: Generoso Martello gene@homegenie.it
-// Project Homepage: http://homegenie.it
+// Author: Generoso Martello gene@HomeGenie-BE.it
+// Project Homepage: http://HomeGenie-BE.it
 // </copyright>
 
 using System;
@@ -70,8 +70,8 @@ namespace TestProject
             // <command> ::= "Greet.Hello"
             // <option_0> ::= "Username"
             // For more infos about MIG API see:
-            //    http://genielabs.github.io/HomeGenie/api/mig/overview.html
-            //    http://genielabs.github.io/HomeGenie/api/mig/mig_api_interfaces.html
+            //    http://genielabs.github.io/HomeGenie-BE/api/mig/overview.html
+            //    http://genielabs.github.io/HomeGenie-BE/api/mig/mig_api_interfaces.html
 
             // The same command can be invoked though the WebGateway
             // http://<server_address>:8080/api/Example.InterfaceSkelton/1/Greet.Hello/Username

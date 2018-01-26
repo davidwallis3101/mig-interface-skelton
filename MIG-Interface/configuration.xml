@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Interface Domain="Example.InterfaceSkelton" AssemblyName="MIG-Interface" SupportedPlatform="All">
+<Interface Domain="Example.InterfaceSkelton" AssemblyName="MIG-Interface.dll" SupportedPlatform="All">
     <Description>Example Interface</Description>
-    <Options />
+    <Options>
+        <Option Name="MyOption1" Value="YourOptionValueHere" />
+        <Option Name="MySecureOption1" Value="" />
+    </Options>
 </Interface>
